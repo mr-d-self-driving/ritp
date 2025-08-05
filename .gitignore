@@ -1,0 +1,11 @@
+## ignore this folder or files ##
+/__pycache__
+/.VSCodeCounter
+/.vscode
+
+# python
+*.py[cod]
+
+# file 
+/media/*
+/images/*

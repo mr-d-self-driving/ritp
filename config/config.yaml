@@ -1,0 +1,21 @@
+## about ritp, please refer to: https://www.sciencedirect.com/science/article/pii/S0921889024002008
+## Li Z, Xie L, Hu C, et al. A rapid iterative trajectory planning method for automated parking through differential flatness[J]. Robotics and Autonomous Systems, 2024, 182: 104816.
+
+## ItCA path optimization
+  path_num_ratio: 20
+  least_n: 15   # should be bigger than 20, related to QP solver
+  TSC_order: 2  # terminal smooth constraints
+  beta: 2
+  optWeights: [50, 0.1, 0.5]
+  
+## velocity plan
+  time_scale: 1.4
+  velocity_least_n: 15
+  tmax_ratio: 2 # Tmax = T_max_acc * tmax_ratio
+  lamba: 0.7
+  velWeights: [1, 0.5, 0.3]
+
+## visulaization
+  dataset_dir: ./dataset
+  map_dir: ./map
+  map_discrete_size: 0.05 # m
