@@ -75,32 +75,16 @@ The **RITP** method involves several key mathematical formulas, especially for *
 ### 1. **Iterative Collision Avoidance (ItCA) Path Planning**
 
 The structure of optimization problem is expressed in the following QP form:
-$$
-\begin{equation}
-	\begin{aligned}\label{eq:pathplanning}
-		\min_{\Xi_i} \quad & \sum_{k=1}^{N_i} \mathbf{e} \Vert \mathbf{K}_{S_{i,k}}\Xi_i - \mathbf{p}_{i,k} \Vert^2_{Q_1}  \\
-		& + \sum_{j=1}^{M_{i,\mathbf{s}}} \| {\mathbf{K}}_{\mathbf{s}_{i,j}}^{'}\Xi_i\Vert^2_{Q_2} + \| {\mathbf{K}}_{\mathbf{s}_{i,j}}^{''}\Xi_i\Vert^2_{Q_3}  \\
-		\text{s.t.} \quad 
-		& \cos(\varphi_{i,1}) =  \zeta{\left(\mathbf{K}_{\mathbf{s}_{i,1+m}} \Xi_i - \mathbf{p}_{i,1}\right) \cdot \mathbf{b}} \cdot  {(m \cdot \mathbf{d}_i)^{-1}}   \\ 
-		& \cos(\varphi_{i,\text{end}}) = -\zeta{\left(\mathbf{K}_{\mathbf{s}_{i,\text{end}-m}} \Xi_i - \mathbf{p}_{i,\text{end}}\right) \cdot \mathbf{b}} \cdot  {(m \cdot \mathbf{d}_i)^{-1}}   \\
-		& \mathbf{p}_{i,1} = \mathbf{K}_{\mathbf{s}_{i,1}} \Xi_i, \;  \mathbf{p}_{i,\text{end}} = \mathbf{K}_{\mathbf{s}_{i,\text{end}}} \Xi_i,1 \leq m 
-	\end{aligned}
-\end{equation}
-$$
+<div style="display: flex; justify-content: flex-start;">
+	<img src="./assets/path_formula.png" alt="fig 1" width="50%"/>
+</div>
 
 ### 2. **Velocity Planning**
 
 To ensure the vehicle follows the planned path while respecting velocity and acceleration limits, the QP problem is modeled as:
-$$
-\begin{align}\label{eq:speedplanning}
-	\min_{\Xi^\mathbf{\mathbf{t}}_i} \quad & \sum_{j=2}^{M_{i,\mathbf{t}}-1}
-	\Vert \dot{\mathbf{K}}_{\mathbf{t}_{i,j}}\Xi_{i,\mathbf{t}} \Vert^2_{R_1} + \Vert \ddot{\mathbf{K}}_{\mathbf{t}_{i,j}}\Xi_{i,\mathbf{t}} \Vert^2_{R_2} + \Vert \dddot{\mathbf{K}}_{\mathbf{t}_{i,j}}\Xi_{i,\mathbf{t}} \Vert^2_{R_3}  \nonumber \\
-	\text{s.t.} \quad & {\mathbf{K}}_{\mathbf{t}_{i,1}}\Xi_{i,\mathbf{t}} = 0, {\mathbf{K}}_{\mathbf{t}_{i,\text{end}}}\Xi_{i,\mathbf{t}} = S_{i,\textrm{end}}  \\
-	& \dot{\mathbf{K}}_{\mathbf{t}_{i,1}}\Xi_{i,\mathbf{t}} = \ddot{\mathbf{K}}_{\mathbf{t}_{i,1}}\Xi_{i,\mathbf{t}} =\dot{\mathbf{K}}_{\mathbf{t}_{i,\text{end}}}\Xi_{i,\mathbf{t}} =\ddot{\mathbf{K}}_{\mathbf{t}_{i,\text{end}}} \Xi_{i,\mathbf{t}} = 0  \nonumber \\
-	& \lVert \dot{\mathbf{K}}_{\mathbf{t}_{i,j}}\Xi_{i,\mathbf{t}} \rVert \leq v_{\text{max}} , \lVert \ddot{\mathbf{K}}_{\mathbf{t}_{i,j}}\Xi_{i,\mathbf{t}} \rVert \leq a_{\text{max}} \nonumber \\
-	& \text{for}\,\,j=2,\cdots,M_{i,\mathbf{t}}-1 \nonumber
-\end{align}
-$$
+<div style="display: flex; justify-content: flex-start;">
+	<img src="./assets/vel_formula.png" alt="fig 1" width="50%"/>
+</div>
 
 
 ## 🛠️ Configure
