@@ -40,20 +40,22 @@ class ploter:
         for j in range(0, map.case.obs_num):
             plt.fill(map.case.obs[j][:, 0], map.case.obs[j][:, 1], facecolor = 'k', alpha = 0.5)
         
-        ## create start vahicle and terminate vehicle
-        temp = map.case.vehicle.create_polygon(map.case.x0, map.case.y0, map.case.theta0)
-        plt.plot(temp[:, 0], temp[:, 1], linestyle='--', linewidth = 0.4, color = 'green')
-        temp = map.case.vehicle.create_polygon(map.case.xf, map.case.yf, map.case.thetaf)
-        plt.plot(temp[:, 0], temp[:, 1], linestyle='--', linewidth = 0.4, color = 'red')
+        ## create start vahicle and terminate vehicle, only used for dataset generation in RSTP paper:
+        # Rapid and Safe Trajectory Planning over Diverse Scenes through Diffusion Composition
+        # temp = map.case.vehicle.create_polygon(map.case.x0, map.case.y0, map.case.theta0)
+        # plt.plot(temp[:, 0], temp[:, 1], linestyle='--', linewidth = 0.4, color = 'green')
+        # temp = map.case.vehicle.create_polygon(map.case.xf, map.case.yf, map.case.thetaf)
+        # plt.plot(temp[:, 0], temp[:, 1], linestyle='--', linewidth = 0.4, color = 'red')
 
         ## create arrow
-        scale = 0.5
-        plt.arrow(map.case.x0, map.case.y0, np.cos(map.case.theta0)*scale, np.sin(map.case.theta0)*scale, width=0.05, color = "gold")
-        plt.arrow(map.case.xf, map.case.yf, np.cos(map.case.thetaf)*scale, np.sin(map.case.thetaf)*scale, width=0.05, color = "gold")
+        # scale = 0.5
+        # plt.arrow(map.case.x0, map.case.y0, np.cos(map.case.theta0)*scale, np.sin(map.case.theta0)*scale, width=0.05, color = "gold")
+        # plt.arrow(map.case.xf, map.case.yf, np.cos(map.case.thetaf)*scale, np.sin(map.case.thetaf)*scale, width=0.05, color = "gold")
 
         plt.title(title_name)
-        plt.xlim(map.boundary[0], map.boundary[1])
-        plt.ylim(map.boundary[2], map.boundary[3])
+        offset = 1 # offset for better visualization
+        plt.xlim(map.boundary[0]+offset, map.boundary[1]+offset)
+        plt.ylim(map.boundary[2]+offset, map.boundary[3])
         plt.gca().set_aspect('equal', adjustable = 'box')
         plt.gca().set_axisbelow(True)
         plt.draw()

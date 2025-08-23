@@ -321,7 +321,7 @@ class RITP:
         # traj_list = []
         # for i in range(len(x_ref)):
         #     traj_list.append([x_ref[i], y_ref[i], phi_ref[i]])
-        # ploter.plot_obstacles(map=self.map)
+        # ploter.plot_obstacles(map=self.map, fig_id=None, is_ion=True, title_name="RITP Trajectory")
         # ploter.plot_final_path(path=traj_list, label='RITP', color='black', show_car=True)
         # self.plot_velocity(t_seq, result_v, phi_ref, delta_ref)
         # plt.close('all')
