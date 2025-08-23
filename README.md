@@ -6,7 +6,7 @@ The iterative collision avoidance (ItCA) path planning utilizes a polynomial wit
 
 With appropriate parameters, the computation time is extremely fast, achieving a calculation speed of 10ms on a desktop computer. Notably, the ItCA method, employed for smoothing discrete path points, delivers outstanding control feasibility performance.
 
-<div style="display: flex; justify-content: flex-start;">
+<div style="display: flex; justify-content: center; align-items: center;">
 	<img src="./assets/vis1.png" alt="fig 1" width="37%" style="margin-right: 10px;"/>
     <img src="./assets/vis2.png" alt="fig 2" width="37%" style="margin-right: 10px;"/>
 </div>
@@ -75,14 +75,14 @@ The **RITP** method involves several key mathematical formulas, especially for *
 ### 1. **Iterative Collision Avoidance (ItCA) Path Planning**
 
 The structure of optimization problem is expressed in the following QP form:
-<div style="display: flex; justify-content: flex-start;">
+<div style="display: flex; justify-content: center; align-items: center;">
 	<img src="./assets/path_formula.png" alt="fig 1" width="50%"/>
 </div>
 
 ### 2. **Velocity Planning**
 
 To ensure the vehicle follows the planned path while respecting velocity and acceleration limits, the QP problem is modeled as:
-<div style="display: flex; justify-content: flex-start;">
+<div style="display: flex; justify-content: center; align-items: center;">
 	<img src="./assets/vel_formula.png" alt="fig 1" width="50%"/>
 </div>
 
