@@ -1,6 +1,6 @@
 # A rapid iterative trajectory planning method
 
-Deploy and visualize the trajectory planner in paper "[A rapid iterative trajectory planning method for automated parking through differential flatness](https://www.sciencedirect.com/science/article/abs/pii/S0921889024002008)". To improve the adaptability across different scenarios, slight modifications have been made to the code implementation compared to the version described in the article. And it is also used for dataset generation in paper: "[Rapid and Safe Trajectory Planning over Diverse Scenes through Diffusion Composition](https://arxiv.org/abs/2507.04384)".
+Deploy and visualize the trajectory planner in paper "[A rapid iterative trajectory planning method for automated parking through differential flatness](https://arxiv.org/abs/2508.17038)". To improve the adaptability across different scenarios, slight modifications have been made to the code implementation compared to the version described in the article. And it is also used for dataset generation in paper: "[Rapid and Safe Trajectory Planning over Diverse Scenes through Diffusion Composition](https://arxiv.org/abs/2507.04384)".
 
 The iterative collision avoidance (ItCA) path planning utilizes a polynomial with Terminal Smoothing Constraints (TSC), while velocity planning is carried out using a polynomial with acceleration constraints at the start and end points. These two components are then combined to generate the final trajectory.
 
